@@ -1,0 +1,5 @@
+<Project>
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)/../tmp/runtimes/**/*" Visible="true" LinkBase="dependencies" Pack="true" PackagePath="runtimes/" />
+    </ItemGroup>
+</Project>
