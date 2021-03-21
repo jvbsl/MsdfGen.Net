@@ -3,6 +3,8 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <RootNamespace>MsdfGen</RootNamespace>
+        <Version>0.1.6-alpha</Version>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -12,6 +14,11 @@
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
       <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="../NOTICE" CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest" Pack="True" PackagePath="" />
+        <None Include="../LICENSE.txt" CopyToPublishDirectory="PreserveNewest" CopyToOutputDirectory="PreserveNewest" Pack="True" PackagePath="" />
+    </ItemGroup>
 
     <Import Project="NativeDependencies.targets" />
 </Project>

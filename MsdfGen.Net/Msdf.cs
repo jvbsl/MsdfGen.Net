@@ -114,7 +114,42 @@ namespace MsdfGen
             MsdfNative.MSDF_AutoFrame(_nativeHandle);
             MsdfNative.CheckAndThrow();
         }
-
+        public void SetTranslation(double x, double y)
+        {
+            MsdfNative.MSDF_SetTranslation(_nativeHandle, x, y);
+            MsdfNative.CheckAndThrow();
+        }
+        public void SetScale(double x, double y)
+        {
+            MsdfNative.MSDF_SetScale(_nativeHandle, x, y);
+            MsdfNative.CheckAndThrow();
+        }
+        public void GetTranslation(out double x, out double y)
+        {
+            MsdfNative.MSDF_GetTranslation(_nativeHandle, out x, out y);
+            MsdfNative.CheckAndThrow();
+        }
+        public void GetScale(out double x, out double y)
+        {
+            MsdfNative.MSDF_GetScale(_nativeHandle, out x, out y);
+            MsdfNative.CheckAndThrow();
+        }
+        
+        public double Range
+        {
+            get
+            {
+                var ret = MsdfNative.MSDF_GetRange(_nativeHandle);
+                MsdfNative.CheckAndThrow();
+                return ret;
+            }
+            set
+            {
+                MsdfNative.MSDF_SetRange(_nativeHandle, value);
+                MsdfNative.CheckAndThrow();
+            }
+        }
+        
         public MsdfNative.Msdf* NativeHandle => _nativeHandle;
 
         public void Dispose()

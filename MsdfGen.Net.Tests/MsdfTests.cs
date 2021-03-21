@@ -71,7 +71,8 @@ namespace MsdfGen.Tests
             var msdf = new Msdf(MsdfMode.MultiAndTrue, 32, 32);
 
             bool skipColoring = false;
-            Assert.True(msdf.Shape.LoadFromDescriptionFile("test.shape", ref skipColoring), "Failed loading shape!");
+            //Assert.True(msdf.Shape.LoadFromDescriptionFile("test.shape", ref skipColoring), "Failed loading shape!");
+            Assert.True(msdf.Shape.LoadFromFontFile("/usr/share/wine/fonts/arial.ttf", 0, (uint)'B'), "Failed loading shape!");
 
             Assert.True(msdf.Shape.Validate(), "Failed validating shape!");
 

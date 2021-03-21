@@ -68,5 +68,11 @@ namespace MsdfGen
             MsdfNative.MSDF_Shape_FlipY(_nativeHandle, flipped);
             MsdfNative.CheckAndThrow();
         }
+
+        public void GetBounds(out double left, out double right, out double top, out double bottom)
+        {
+            MsdfNative.MSDF_Shape_GetBounds(_nativeHandle, out left, out right, out top, out bottom);
+            MsdfNative.CheckAndThrow();
+        }
     }
 }
